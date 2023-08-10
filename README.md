@@ -1,5 +1,4 @@
-# ipp-drowser
-
+# ipp-browser
 
 ## Installation
 

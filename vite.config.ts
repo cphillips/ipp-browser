@@ -6,9 +6,9 @@ export default defineConfig({
         lib: {
             // Could also be a dictionary or array of multiple entry points
             entry: resolve(__dirname, 'lib/main.ts'),
-            name: '@digasystems/react-device',
+            name: '@digasystems/ipp-browser',
             // the proper extensions will be added
-            fileName: 'react-device',
+            fileName: 'ipp-browser',
         },
         rollupOptions: {
             // make sure to externalize deps that shouldn't be bundled
