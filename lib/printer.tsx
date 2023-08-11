@@ -1,5 +1,6 @@
 import { extend } from "./ipputil";
 import { serializer } from "./serializer";
+import { OperationDescription } from "./types";
 
 class Printer {
   url: URL | any;
@@ -51,14 +52,12 @@ class Printer {
     return defaultHeaders;
   }
 
-  encodeMsg(operation: string, msg: any) {
+  encodeMsg(operation: OperationDescription, msg: any) {
     msg = this._message(operation, msg);
     const buf = serializer(msg);
     console.log(buf);
     return buf;
   }
-
- 
 }
 
 export default Printer;

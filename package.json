@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/digasystems/ipp-browser.git"
   },
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "ipp-browser is a powerful library that brings the power of Internet Printing Protocol (IPP) directly into the browser. With this library, you can easily integrate printing to IPP-compatible network devices directly from your web applications without having to rely on additional plugins or software.",
   "scripts": {
     "build": "npx vite build",
