@@ -147,6 +147,7 @@ function collection(group: any, name?: any) {
 }
 
 let MAX = {};
+let name = 'default_name'
 
 let attributes: any = {};
 attributes["Document Description"] = {
