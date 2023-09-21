@@ -18,6 +18,16 @@ doc.pipe(concat(function (data: any) {
         data: data,
     };
 
+
+    // fetch(url, {
+    //     method: "POST",
+    //     headers: {'Content-Type': "application/ipp"},
+    //     body: printer.encodeMsg("Print-Job", msg)
+    // }).then((response) => {
+    //     console.log(response)
+    // })
+
+
     axios
         .post(url, printer.encodeMsg("Print-Job", msg), {
             headers: printer.getHeaders(),
