@@ -3,7 +3,7 @@ import axios from 'axios'
 import Buffer from 'buffer'
 import PDFDocument from 'pdfkit'
 import concat from 'concat-stream'
-import Printer from './lib/main'
+import Printer from './lib/printer'
 
 var doc = new PDFDocument({ margin: 5 });
 
@@ -26,8 +26,8 @@ doc.pipe(concat(function (data: any) {
             responseType:"arraybuffer",
             headers: printer.getHeaders(),
         })
-        .then((response) => {
-            console.log(parse(response.data))
+        .then((response:any) => {
+            console.log(printer.decodeMsg(response.data))
         });
 
 
