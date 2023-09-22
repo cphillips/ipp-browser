@@ -1,10 +1,11 @@
-import enums from "./enums";
-import { status } from "./status-codes";
-import { tags } from "./tags";
+import enums from "./enums"
+import { status } from "./status-codes"
+import { tags } from "./tags"
 
-let operations = enums["operations-supported"],
- 
-  RS = "\u001e";
+const operations = enums["operations-supported"]
+const RS = "\u001e"
+
+
 export default function (buf: any) {
   let obj:any = {};
   let position = 0;

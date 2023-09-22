@@ -1,6 +1,7 @@
-import { extend } from "./ipputil";
-import { serializer } from "./serializer";
-import { OperationDescription } from "./types";
+import { extend } from "./ipputil"
+import { serializer } from "./serializer"
+import { OperationDescription } from "./types"
+import parse from "./parser"
 
 class Printer {
   url: URL | any;
@@ -57,6 +58,10 @@ class Printer {
     const buf = serializer(msg);
     console.log(buf);
     return buf;
+  }
+
+  decodeMsg(buf: any) {
+    return parse(buf)
   }
 }
 

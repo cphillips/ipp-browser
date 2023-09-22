@@ -4,7 +4,7 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/ipp-browser.umd.cjs",
+  "main": "./dist/index.js",
   "module": "./dist/ipp-browser.js",
   "exports": {
     ".": {
@@ -14,16 +14,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/digasystems/ipp-browser.git"
+    "url": "git+https://github.com/cphillips/ipp-browser.git"
   },
-  "version": "1.0.2",
-  "description": "ipp-browser is a powerful library that brings the power of Internet Printing Protocol (IPP) directly into the browser. With this library, you can easily integrate printing to IPP-compatible network devices directly from your web applications without having to rely on additional plugins or software.",
+  "version": "1.0.0",
+  "description": "IPP for the browse and node",
   "scripts": {
-    "build": "vite build",
-    "start": "vite",
     "test": "tsx test.ts"
   },
-  "author": "Cristian Della Monica",
+  "author": "Clint Phillips",
+  "contributors": [
+    {
+      "name": "Cristian Della Monica"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "axios": "^1.5.0",
@@ -38,12 +41,9 @@
     "vite": "^4.4.9"
   },
   "bugs": {
-    "url": "https://github.com/digasystems/ipp-browser/issues"
+    "url": "https://github.com/cphillips/ipp-browser/issues"
   },
-  "homepage": "https://github.com/digasystems/ipp-browser#readme",
-  "directories": {
-    "lib": "lib"
-  },
+  "homepage": "https://github.com/cphillips/ipp-browser#readme",
   "keywords": [
     "ipp",
     "ipp-browser",

@@ -1,5 +1,5 @@
 
-import axios from 'axios';
+import axios from 'axios'
 import Buffer from 'buffer'
 import PDFDocument from 'pdfkit'
 import concat from 'concat-stream'
@@ -19,21 +19,15 @@ doc.pipe(concat(function (data: any) {
     };
 
 
-    // fetch(url, {
-    //     method: "POST",
-    //     headers: {'Content-Type': "application/ipp"},
-    //     body: printer.encodeMsg("Print-Job", msg)
-    // }).then((response) => {
-    //     console.log(response)
-    // })
 
 
     axios
         .post(url, printer.encodeMsg("Print-Job", msg), {
+            responseType:"arraybuffer",
             headers: printer.getHeaders(),
         })
         .then((response) => {
-            console.log(response)
+            console.log(parse(response.data))
         });
 
 
