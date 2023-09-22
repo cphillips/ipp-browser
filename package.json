@@ -1,19 +1,17 @@
 {
-  "name": "@cphillips/ipp-browser",
+  "name": "@c_phillips/ipp-browser",
+  "version": "1.0.0",
   "type": "module",
-  "files": [
-    "dist"
-  ],
   "main": "./dist/lib/printer.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cphillips/ipp-browser.git"
   },
-  "version": "1.0.0",
   "description": "IPP for the browse and node",
   "scripts": {
     "test": "tsx test.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "tsc"
   },
   "author": "Clint Phillips",
   "contributors": [
@@ -48,5 +46,8 @@
     "web-print",
     "web",
     "browser"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

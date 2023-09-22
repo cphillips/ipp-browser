@@ -6,12 +6,12 @@ With this library, you can easily integrate printing to IPP-compatible network d
 ​
 #### npm
 ```sh
-$ npm install ipp-browser --save
+$ npm install @cphillips/ipp-browser --save
 ```
 ​
 #### yarn
 ```sh
-$ yarn add ipp-browser
+$ yarn add @cphillips/ipp-browser
 ```
 ​
 ## API
@@ -44,25 +44,35 @@ Returns the heades to be included in your request
 #### Create a print request
 ​
 ```javascript
-import Printer from '@digasystems/ipp-browser';
-import axios from 'axios';
-​
-let url ="http://192.168.x.y:631/ipp/print"
+import axios from 'axios'
+import PDFDocument from 'pdfkit'
+import concat from 'concat-stream'
+import Printer from './lib/printer'
+
+var doc = new PDFDocument({ margin: 5 });
+
+doc.pipe(concat(function (data: any) {
+
+    let url = "http://192.168.4.62:631/ipp/print"
     let printer = new Printer(url);
     let msg = {
         "operation-attributes-tag": {
-            "document-format": "image/jpeg",
+            "document-format": "application/pdf",
         },
-        data: Buffer.from(imgBuff) , 
-      };
-​
-axios
-    .post(url, printer.encodeMsg("Print-Job",msg), {
-        headers: printer.getHeaders(),
-    })
-    .then((response) => {
-        console.log(response)
-    });
+        data: data,
+    };
+
+    axios
+        .post(url, printer.encodeMsg("Print-Job", msg), {
+            responseType:"arraybuffer",
+            headers: printer.getHeaders(),
+        })
+        .then((response:any) => {
+            console.log(printer.decodeMsg(response.data))
+        });
+
+
+}))
 ​
 ```
 ​

@@ -1,6 +1,5 @@
 
 import axios from 'axios'
-import Buffer from 'buffer'
 import PDFDocument from 'pdfkit'
 import concat from 'concat-stream'
 import Printer from './lib/printer'
