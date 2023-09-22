@@ -56,7 +56,6 @@ class Printer {
   encodeMsg(operation: OperationDescription, msg: any) {
     msg = this._message(operation, msg);
     const buf = serializer(msg);
-    console.log(buf);
     return buf;
   }
 
